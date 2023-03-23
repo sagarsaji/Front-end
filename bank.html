@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Bank Form</title>
+</head>
+<body>
+  
+  <div class="headerr">
+    <center><h1>UST Banking</h1>
+      <div id="navv">
+        <nav>
+          <a href="index.html" class="na">Home</a>
+          <a href="bank.html" class="na active">Banking</a>
+          <a href="about.html" class="na">About</a>
+        </nav>
+      </div>
+    
+    </center>
+  </div>
+  
+  
+    <div id="bg">
+   <center><form action="" method="post" name="myform">
+    <p>Current Date : <span id="date"></span></p>
+    <br>
+    <label for="fname">First Name :</label>
+    <br>
+    <input type="text" id="fname" name="fname" required>
+    <br>
+    <label for="aadhar">Aadhar Number : </label>
+    <br>
+    <input type="text" id="aadhar" pattern="[0-9]{12}" required> 
+    <br>
+    <label for="pan">Pan Number : </label>
+    <br>
+    <input type="text" id="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+    <br>
+    <label for="branch">Branch : </label>
+    <br>
+    <input type="text" id="branch" required>
+    <br>
+
+    
+    
+      <label for="amount">Amount : </label>
+      <br>
+      <input type="number" id="amount" required>
+      <br>
+      <label for="time">Time : </label>
+      <br>
+      <input type="number" id="time" required>
+      <br>
+      <label for="rate">Rate : </label>
+      <br>
+      <input type="number" id="rate" required>
+      <br>
+    
+    
+   </form>
+   <br>
+
+   <button onclick="calculate()">Calculate Interest</button>
+   <input type="number" id="interest" readonly>
+  </div>
+
+  <div id="footer">
+    <div id="titleee">© UST 2023</div>
+  </div>
+
+   <script>
+    var currentDate = new Date();
+    document.getElementById("date").innerHTML = currentDate;
+  </script>
+  <script>
+    function calculate(){
+    var p = document.getElementById("amount").value;
+    var r = document.getElementById("rate").value;
+    var t = document.getElementById("time").value;
+    var i = (p*r*t)/100;
+    document.getElementById("interest").value = i;
+    }
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#bg1 {
+    background-color: bisque;
+    width:100%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-image: url("https://www.wallpapertip.com/wmimgs/94-948582_light-colorful-background-hd.jpg");
+    height:500px;
+}
+
+
+
+.headerr1{
+    width:100%; 
+    background-color:rgb(237, 230, 243);
+    
+}
+
+#title1{
+    color:black;
+    background-color: blueviolet;
+    width:30%;
+    text-decoration: none;
+}
+
+#navv1 {
+    
+    font-size: large;
+   padding-bottom: 10px;
+    
+
+}
+
+.na1{
+    margin-left:10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#footer1{
+    background-color:rgb(237, 230, 243);
+
+    
+}
+
+#titleee1{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 15px;
+}
+
+
+
