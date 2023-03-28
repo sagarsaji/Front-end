@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>Bank Form</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="principalAmount">Principal Loan Amount (Rs): </label>
+        <input type="text" id="principalAmount">
+        <br>
+        <br>
+        <label for="interestRate">Interest Rate (%) :</label>
+        <input type="text" id="interestRate">
+        <br>
+        <br>
+        <label for="tenure">Tenure (in months) : </label>
+        <input type="text" id="tenure">
+        <br>
+        <br>
+        <button type="submit">Estimate</button>
+        <br>
+        <br>
+    </form>
+    <table style="border: 2px solid;">
+        <tr>
+            <th>Details</th>
+            <th>Reducing Interest Loan</th>
+            <th>Fixed Interest Loan</th>
+        </tr>
+        <tr>
+            <th>Total Interest Rs.</th>
+            <th id="tInterestt"></th>
+            <th id="tInterestFixedd"></th>
+        </tr>
+        <tr>
+            <th>Total Payment Rs.</th>
+            <th id="tPaymentt"></th>
+            <th id="tPaymentFixedd"></th>
+        </tr>
+        <tr>
+            <th>Montly EMI Rs.</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+</body>
+</html>
