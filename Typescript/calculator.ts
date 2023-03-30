@@ -1,7 +1,4 @@
-// Write a TypeScript program to create a simple calculator. 
-// The calculator should have functions to perform basic arithmetic operations such as 
-// addition, subtraction, multiplication, and division. The program should prompt the 
-// user to enter two numbers and the operation they want to perform.
+import * as readline from "readline";
 
 function add(a: number, b: number): number{
     return a+b;
@@ -19,21 +16,32 @@ function divv(a: number, b: number): number{
     return a/b;
 }
 
-let a: number = parseInt(prompt());
-let b: number = parseInt(prompt());
-let op: string = prompt("Operator : ");
-let result: number;
-switch(op){
-    case '+' : result = add(a,b);
-                break;
-    case '-' : result = sub(a,b);
-                break;
-    case '*' : result = mul(a,b);
-                break;
-    case '/' : result = divv(a,b);
-                break;
-    default  : console.log("invalid");
-                break;
-}
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-console.log(result);
+rl.question("Enter first number: ", (a: string) => {
+rl.question("Enter second number: ", (b: string) => {
+rl.question("Enter operator (+, -, *, /): ", (op: string) => {
+            const num1 = parseInt(a);
+            const num2 = parseInt(b);
+            let result: number;
+            switch(op){
+                case '+' : result = add(num1, num2);
+                            break;
+                case '-' : result = sub(num1, num2);
+                            break;
+                case '*' : result = mul(num1, num2);
+                            break;
+                case '/' : result = divv(num1, num2);
+                            break;
+                default  : console.log("Invalid operator");
+                            rl.close();
+                            return;
+            }
+            console.log(`Result: ${result}`);
+            rl.close();
+        });
+    });
+});
