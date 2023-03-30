@@ -9,22 +9,23 @@
 </head>
 <body>
     <form action="" method="post">
-        <label for="principalAmount">Principal Loan Amount (Rs): </label>
-        <input type="text" id="principalAmount">
+        <label for="principalamount">Principal Loan Amount (Rs): </label>
+        <input type="text" id="principalamount">
         <br>
         <br>
-        <label for="interestRate">Interest Rate (%) :</label>
-        <input type="text" id="interestRate">
+        <label for="interestrate">Interest Rate (%) :</label>
+        <input type="text" id="interestrate">
         <br>
         <br>
         <label for="tenure">Tenure (in months) : </label>
         <input type="text" id="tenure">
         <br>
         <br>
-        <button type="submit">Estimate</button>
+        
         <br>
         <br>
     </form>
+    <button type="submit" onclick="estimatedloan()">Estimate</button>
     <table style="border: 2px solid;">
         <tr>
             <th>Details</th>
@@ -33,19 +34,39 @@
         </tr>
         <tr>
             <th>Total Interest Rs.</th>
-            <th id="tInterestt"></th>
-            <th id="tInterestFixedd"></th>
+            <th id="tinterest"></th>
+            <th id="tinterestfixed"></th>
         </tr>
         <tr>
             <th>Total Payment Rs.</th>
-            <th id="tPaymentt"></th>
-            <th id="tPaymentFixedd"></th>
+            <th id="tpayment"></th>
+            <th id="tpaymentfixed"></th>
         </tr>
         <tr>
             <th>Montly EMI Rs.</th>
-            <th></th>
-            <th></th>
+            <th><span id="emi"></span></th>
+            <th id="emifixed"></th>
         </tr>
     </table>
+
+    <script>
+        function estimatedloan(){
+            let p = document.getElementById("principalamount").value;
+            let r = document.getElementById("interestrate").value;
+            let n = document.getElementById("tenure").value;
+
+            let R = (r/100)/12;
+
+            let emi = p*r((1+R)^n/((1+R)^n-1));
+
+            document.getElementById("emi").value = emi.toFixed(2);
+
+            let totalpay = emi-n;
+            let totalint = totalpay-p;
+
+            document.getElementById("tpayment").value = totalpay;
+            document.getElementById("tinterest").value = totalint;
+        }
+    </script>
 </body>
 </html>
